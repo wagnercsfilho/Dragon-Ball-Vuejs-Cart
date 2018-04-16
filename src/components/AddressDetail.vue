@@ -41,9 +41,9 @@ import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
           latitude,
           longitude
         } = this.addressPosition;
-        const resultLocation = await fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude}`).then(result => result.json());
+        const resultLocation = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude}`).then(result => result.json());
         const woeid = resultLocation[0].woeid;
-        const resultWeather = await fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`).then(result => result.json());
+        const resultWeather = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`).then(result => result.json());
         this.weather = resultWeather.consolidated_weather[0];
       },
       getDistance() {
