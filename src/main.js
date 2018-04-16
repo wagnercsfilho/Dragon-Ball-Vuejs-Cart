@@ -21,8 +21,8 @@ Vue.use(VueMask);
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.commit('setUser', user.toJSON());
-    store.commit('setAppReady');
   }
+  store.commit('setAppReady');
 });
 
 /* eslint-disable no-new */
