@@ -58,6 +58,7 @@
       addresses: "allAddresses",
       selectedAddressId: "selectedAddressId",
       currentUser: "currentUser",
+      products: 'cartProducts',
     }),
     methods: {
       ...mapActions(["changeSelectedAddress", "removeAddress"]),
@@ -123,6 +124,12 @@
       if (!this.currentUser) {
         this.$router.push({
           path: 'login'
+        });
+        return;
+      }
+      if (!this.products.length) {
+        this.$router.push({
+          path: '/'
         });
         return;
       }

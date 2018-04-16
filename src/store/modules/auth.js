@@ -12,10 +12,12 @@ const actions = {
   async signIn({ commit }, { email, password }) {
     const user = await api.signIn(email, password);
     commit('setUser', user);
+    return user;
   },
   async signUp({ commit }, { name, email, password }) {
     let user = await api.signUp(name, email, password);
     commit('setUser', user);
+    return user;
   },
   async signOut({ commit }) {
     await api.signOut();
